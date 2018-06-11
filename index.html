@@ -16,11 +16,12 @@
     <p> Name: {{ name }}</p>
     <h1>Events</h1>
     <hr>
-    <!-- <button v-on:click="age++">Add a year</button>
-    <button v-on:click="age--">Substract a year</button> -->
-    <button v-on:click="add">Add a year</button>
-    <button v-on:click="substract">Substract a year</button>
+    <button @click="add(1)">Add a year</button>
+    <button v-on:click="substract(1)">Substract a year</button>
+    <button @dblclick="add(10)">Add 10 year</button>
+    <button v-on:dblclick="substract(10)">Substract 10 year</button>
     <p>My age is {{ age }}</p>
+    <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="app.js"></script>

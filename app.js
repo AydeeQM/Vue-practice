@@ -4,21 +4,26 @@ new Vue ({
     name: 'Aydee',
     job: 'Developer',
     age: 23,
-    website: 'http://www.thenetninja.co.uk',
-    websiteTag: '<a href="http://www.thenetninja.co.uk">The ninja</a>'
+    x: 0,
+    y: 0
   },
   methods: {
     greet: function(time){
       return `Good ${time} ${this.name}`
     },
 
-    add: function(){
-      this.age++;
+    add: function(inc){
+      this.age += inc;
     },
 
-    substract: function(){
-      this.age--;
-    }
+    substract: function(dec){
+      this.age -= dec;
+    },
 
+    updateXY: function(e){
+      //console.log(e);
+      this.x = e.offsetX;
+      this.y = e.offsetY;
+    }
   }
 })
